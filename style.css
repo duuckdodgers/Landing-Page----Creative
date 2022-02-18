@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth; /*criar efeito de descer com o scroll quando clica no botão explore e é direcionado para o texto*/
+}
+
+body {
+    min-height: 100vh; /*tira a repetição do gradiente bg e faz ficar unica*/
+    overflow-x: hidden;
+    background: linear-gradient(#125b54, #a9ca51); /*Cria um gradiente de fundo mas se repete varias vezes*/
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000; /*Para deixar a lista do cabeçalho por cima das imagens*/
+}
+
+header .logo {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    Letter-spacing: 2px;
+}
+
+header ul { /*colocando os nomes do cabeçalho na horizontal*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li { 
+    list-style: none; /*tirando itens de marcação dos nomes do cabeçalho*/
+    margin-left: 20px; /*criando margem entre os itens do cabeçalho*/
+}
+
+header ul li a { /*estilizando a cor do texto dos itens do cabeçalho*/
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+    border-radius: 20px; /*deixando as bordas do fundo dos itens do cabeçalho arredondadas, este item foi colocado apos color o item 'header ul li a:hover'*/
+}
+
+header ul li a:hover , /*deixando o fundo branco quando passar o mouse encima dos nomes do cabeçalho*/
+header ul li a.active { /*deixou o fundo do item 'home' fixo*/
+    background: #fff;
+    color: #125b54;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /*nao deixa o botao sobrepor a parte de baixo da pagina quando descer com o mouse*/
+}
+
+section::before { /*tirando linha entre a imagem e o texto que está na parte de baixo da página*/
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #050c0b, transparent);
+    z-index: 1000;
+}
+
+section img { /*deixando todas as imagens uma sobre a outra*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+section img#moon { /*tirando a borda preta da lua com modo mistura na tela*/
+    mix-blend-mode: screen;
+}
+
+section img#animal {
+    mix-blend-mode: screen;
+    z-index: 10000;
+}
+
+section img#firefly {
+    mix-blend-mode: screen;
+    z-index: 10000;
+}
+
+section img#vegetation_front3 {
+    z-index: 10;
+}
+
+#text { /*Editar o texto "Moon Light" colocado como segundo título*/
+    position: absolute;
+    right: -1050px; /*colocando o título para direita assim ele cruza a tela quando descer devido a função do JS*/
+    color: #fff;
+    white-space: nowrap;
+    font-size: 7.5vw;
+    z-index: 9;
+}
+
+#btn { /*IMPORTANTE: '#' USADAS PARA "ID" E '.' USADO PARA "CLASS"*/
+    /*decorando botão 'Explore'*/
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 30px;
+    border-radius: 40px;
+    background: #fff;
+    color: #125b54;
+    font-size: 1.5em;
+    z-index: 9; /*passando o botão para frente do 'Moon Light'*/
+    transform: translateY(10px); /*Colocando o botão para baixo*/
+}
+
+.sec {
+    position: relative;
+    padding: 100px;
+    background: #050c0b;
+}
+
+.sec h2 { /*Editando título do Texto*/
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.sec p {
+    font-size: 1em;
+    color: #fff;
+}
